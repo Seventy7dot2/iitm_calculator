@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Marks Required Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://app.onlinedegree.iitm.ac.in//static/img/logo.ico">
+  </head>
+  <body>
+    <div id="heading">
+        <h1>Marks Required Calculator</h1>
+        <h4>by Prasad Patra</h4>
+    </div>
+    <form id="marks-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="off">
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" placeholder="Enter the subject name" autocomplete="off"required>
+
+      <label for="ga">Average Graded Assignement:</label>
+      <input type="number" id="ga" name="ga" min="0" max="100" placeholder="Enter your GA marks" required>
+
+      <label for="qz1">Quiz 1:</label>
+      <input type="number" id="qz1" name="qz1" min="0" max="100" placeholder="Enter your Qz1 marks" required>
+
+      <label for="qz2">Quiz 2:</label>
+      <input type="number" id="qz2" name="qz2" min="0" max="100" placeholder="Enter your Qz2 marks" required>
+
+      <input type="submit" value="Calculate">
+    </form>
+
+    <div id="result">
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>GA</th>
+                    <th>Qz1</th>
+                    <th>Qz2</th>
+                    <th>More Marks Required</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
