@@ -10,9 +10,14 @@ form.addEventListener('submit', function(event) {
   const qz1 = parseInt(form.elements.qz1.value);
   const qz2 = parseInt(form.elements.qz2.value);
 
-  const num = (40 - ((0.1*ga)+(0.2*qz1)+(0.3*qz2)))/0.4;
-  const moreMarks = num<=0?"Already Passed" : num.toFixed(2);
-    console.log(moreMarks)
+  const num1 = (40 - ((0.1*ga)+(0.2*qz1)+(0.3*qz2)))/0.4;
+  const num2 = (40-((0.1*ga)+(0.2*(Math.max(qz1,qz2)))))/0.6
+  if (num1<num2) {
+    var moreMarks = num1<=0?"Already Passed" : num1.toFixed(2);
+  }
+  else{
+    var moreMarks = num2<=0?"Already Passed" : num2.toFixed(2);
+  }
   const row = document.createElement('tr');
   const subjectCell = document.createElement('td');
   const gaCell = document.createElement('td');
