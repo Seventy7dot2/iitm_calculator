@@ -7,7 +7,9 @@
     margin: 0;
     /* background-color: black; */
   }
-  
+  .hidden {
+    display: none;
+    }
   h1, h4 {
     text-align: center;
     /* color: white; */
@@ -27,7 +29,7 @@
   }
   
   input[type="text"],
-  input[type="number"] {
+  input[type="number"], select {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
