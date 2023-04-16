@@ -18,6 +18,7 @@ form.addEventListener('submit', function(event) {
   else{
     var moreMarks = num2<=0?"Already Passed" : num2.toFixed(2);
   }
+    console.log(moreMarks)
   const row = document.createElement('tr');
   const subjectCell = document.createElement('td');
   const gaCell = document.createElement('td');
