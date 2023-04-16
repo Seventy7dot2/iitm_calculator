@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://app.onlinedegree.iitm.ac.in//static/img/logo.ico">
+    <style>
+      
+    </style>
   </head>
   <body>
     <div id="heading">
@@ -15,19 +18,31 @@
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="off">
 
-      <label for="subject">Subject:</label>
-      <input type="text" id="subject" name="subject" placeholder="Enter the subject name" autocomplete="off"required>
+      <label for="first-dropdown">Level:</label>
+		<select id="first-dropdown">
+			<option value="">Select an option</option>
+			<option value="foundation">Foundation</option>
+			<option value="diploma">Diploma</option>
+			<option value="degree">Degree</option>
+		</select>
 
+		<div id="second-dropdown-container" class="hidden">
+			  <label for="second-dropdown">Subject:</label>
+		  <select id="second-dropdown">
+      </select>
+    </div>        
+    <div id="fields" class="hidden">
       <label for="ga">Average Graded Assignement:</label>
       <input type="number" id="ga" name="ga" min="0" max="100" placeholder="Enter your GA marks" required>
-
+      
       <label for="qz1">Quiz 1:</label>
       <input type="number" id="qz1" name="qz1" min="0" max="100" placeholder="Enter your Qz1 marks" required>
-
+      
       <label for="qz2">Quiz 2:</label>
       <input type="number" id="qz2" name="qz2" min="0" max="100" placeholder="Enter your Qz2 marks" required>
-
+      
       <input type="submit" value="Calculate">
+    </div>
     </form>
 
     <div id="result">
@@ -45,6 +60,7 @@
             </tbody>
         </table>
     </div>
+    <script src="script2.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
