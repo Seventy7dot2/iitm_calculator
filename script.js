@@ -1,11 +1,10 @@
 const form = document.querySelector('#marks-form');
 const resultTable = document.querySelector('#result table tbody');
-// const secondDropdown = document.querySelector('#second-dropdown');
-// let calc = document.querySelector('#calc');
 form.addEventListener('submit', function (event) {
   event.preventDefault(); // prevent the form from submitting and refreshing the page
   if (secondDropdown.value === 'stats1' || secondDropdown.value === 'maths1' || secondDropdown.value === 'ct' || secondDropdown.value === 'eng1'
-    || secondDropdown.value === 'stats2' || secondDropdown.value === 'maths2' || secondDropdown.value === 'eng2') {
+    || secondDropdown.value === 'stats2' || secondDropdown.value === 'maths2' || secondDropdown.value === 'eng2' || secondDropdown.value === 'cs2004'
+    ) {
     const name = form.elements.name.value;
     const subject = secondDropdown.value;
     const ga = parseInt(form.elements.ga.value);
@@ -23,25 +22,12 @@ form.addEventListener('submit', function (event) {
     console.log(moreMarks)
     const row = document.createElement('tr');
     const subjectCell = document.createElement('td');
-    const gaCell = document.createElement('td');
-    const qz1Cell = document.createElement('td');
-    const qz2Cell = document.createElement('td');
-    const pe1Cell = document.createElement('td');
-    const pe2Cell = document.createElement('td');
     const moreMarksCell = document.createElement('td');
 
     subjectCell.textContent = subject;
-    gaCell.textContent = ga;
-    qz1Cell.textContent = qz1;
-    qz2Cell.textContent = qz2;
     moreMarksCell.textContent = moreMarks;
 
     row.appendChild(subjectCell);
-    row.appendChild(gaCell);
-    row.appendChild(qz1Cell);
-    row.appendChild(qz2Cell);
-    row.appendChild(pe1Cell);
-    row.appendChild(pe2Cell);
     row.appendChild(moreMarksCell);
     
     resultTable.appendChild(row);
@@ -68,26 +54,12 @@ form.addEventListener('submit', function (event) {
     console.log(moreMarks)
     const row = document.createElement('tr');
     const subjectCell = document.createElement('td');
-    const gaCell = document.createElement('td');
-    const qz1Cell = document.createElement('td');
-    const qz2Cell = document.createElement('td');
-    const pe1Cell = document.createElement('td');
-    const pe2Cell = document.createElement('td');
     const moreMarksCell = document.createElement('td');
     
     subjectCell.textContent = subject;
-    gaCell.textContent = ga;
-    qz1Cell.textContent = qz1;
-    pe1Cell.textContent = pe1;
-    pe2Cell.textContent = pe2;
     moreMarksCell.textContent = moreMarks;
     
     row.appendChild(subjectCell);
-    row.appendChild(gaCell);
-    row.appendChild(qz1Cell);
-    row.appendChild(qz2Cell);
-    row.appendChild(pe1Cell);
-    row.appendChild(pe2Cell);
     row.appendChild(moreMarksCell);
 
     resultTable.appendChild(row);
