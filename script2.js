@@ -2,6 +2,7 @@ const firstDropdown = document.querySelector('#first-dropdown');
 const secondDropdownContainer = document.querySelector('#second-dropdown-container');
 const secondDropdown = document.querySelector('#second-dropdown');
 const fields = document.querySelector('#fields');
+const calc = document.querySelector('#calc');
 const create_option = (value,tContent)=>{
     const option = document.createElement('option');
     option.value = value;
@@ -11,13 +12,18 @@ const create_option = (value,tContent)=>{
 const create_marksinput =(value, tContent)=>{
     const label = document.createElement('label');
     label.for = value;
+	label.innerHTML = `${tContent}:`;
     const input = document.createElement('input');
-    input.type = number;
+    input.type = 'number';
     input.id = value;
     input.name = value;
     input.min ='0';
     input.max = '100';
-    input.placeholder = `Enter your ${tContent} marks`
+    input.placeholder = `Enter your ${tContent} marks`;
+	input.setAttribute('required', '');
+	// input.setAttribute('required');
+	fields.appendChild(label);
+	fields.appendChild(input);
 
 }
 		const updateSecondDropdownOptions = () => {
@@ -73,7 +79,7 @@ const create_marksinput =(value, tContent)=>{
 		firstDropdown.addEventListener('change', () => {
 			if (firstDropdown.value === '') {
 				secondDropdownContainer.classList.add('hidden');
-				fields.classList.add('hidden');
+				calc.classList.add('hidden');
 			} else {
 				updateSecondDropdownOptions();
 				secondDropdownContainer.classList.remove('hidden');
@@ -82,9 +88,77 @@ const create_marksinput =(value, tContent)=>{
 		
 		secondDropdownContainer.addEventListener('change', () => {
 			if (secondDropdown.value === '') {
-				fields.classList.add('hidden');
+				calc.innerHTML='';
+				calc.classList.add('hidden');
 			}
+			else if(secondDropdown.value === 'stats1' || secondDropdown.value === 'maths1'  || secondDropdown.value === 'ct'  || secondDropdown.value === 'eng1'
+			|| secondDropdown.value === 'stats2'  || secondDropdown.value === 'maths2'  || secondDropdown.value === 'eng2' || secondDropdown.value === 'cs2004'
+			|| secondDropdown.value === 'cs2003' || secondDropdown.value === 'cs2007'){
+				fields.innerHTML='';
+				create_marksinput('ga','Average Graded Assignment');
+				create_marksinput('qz1','Quiz 1');
+				create_marksinput('qz2','Quiz 2');
+				calc.classList.remove('hidden');
+			}
+			else if(secondDropdown.value === 'python'){
+				fields.innerHTML='';
+				create_marksinput('ga','Average Graded Assignment');
+				create_marksinput('qz1','Quiz 1');
+				create_marksinput('pe1','OPPE 1');
+				create_marksinput('pe2','OPPE 2');
+				calc.classList.remove('hidden');
+			}
+			else if(secondDropdown.value === 'cs2002' || secondDropdown.value === 'cs2001'){
+				fields.innerHTML='';
+				create_marksinput('ga','Average Graded Assignment');
+				create_marksinput('qz1','Quiz 1');
+				create_marksinput('qz2','Quiz 2');
+				create_marksinput('ope','OPE');
+				calc.classList.remove('hidden');
+			}
+			else if(secondDropdown.value === 'cs2005' || secondDropdown.value === 'cs2008'){
+				fields.innerHTML='';
+				create_marksinput('ga','Average Graded Assignment');
+				create_marksinput('qz1','Quiz 1');
+				create_marksinput('qz2','Quiz 2');
+				create_marksinput('pe1','OPPE 1');
+				create_marksinput('pe2','OPPE 2');
+				calc.classList.remove('hidden');
+			}
+			else if(secondDropdown.value === 'se2001'){
+				fields.innerHTML='';
+				create_marksinput('ga1','Average Graded Assignment 1');
+				create_marksinput('ga2','Average Graded Assignment 2');
+				create_marksinput('ga3','Average Graded Assignment 3');
+				create_marksinput('qz1','Quiz 1');
+				create_marksinput('qz2','Quiz 2');
+				create_marksinput('pe1','OPPE 1');
+				create_marksinput('pe2','OPPE 2');
+				calc.classList.remove('hidden');
+			}
+			
+			else if(secondDropdown.value === 'cs2006'){
+				fields.innerHTML='';
+				create_marksinput('ga1','Average Graded Assignment');
+				create_marksinput('ga2','Average Programming Assignment');
+				create_marksinput('qz1','Quiz 1');
+				create_marksinput('qz2','Quiz 2');
+				calc.classList.remove('hidden');
+			}
+
+			
+			else if(secondDropdown.value === 'se2002'){
+				fields.innerHTML='';
+				create_marksinput('ga','Average Graded Assignment');
+				create_marksinput('roe1','Remote Online Exam');
+				create_marksinput('pe1','OPPE 1');
+				create_marksinput('pe2','OPPE 2');
+				calc.classList.remove('hidden');
+			}
+			
+			
 			else {
-				fields.classList.remove('hidden');
+				fields.innerHTML='';
+				calc.classList.remove('hidden');
 			}
 		});
