@@ -93,7 +93,7 @@ const create_marksinput =(value, tContent)=>{
 			}
 			else if(secondDropdown.value === 'stats1' || secondDropdown.value === 'maths1'  || secondDropdown.value === 'ct'  || secondDropdown.value === 'eng1'
 			|| secondDropdown.value === 'stats2'  || secondDropdown.value === 'maths2'  || secondDropdown.value === 'eng2' || secondDropdown.value === 'cs2004'
-			|| secondDropdown.value === 'cs2003' || secondDropdown.value === 'cs2007'){
+			|| secondDropdown.value === 'cs2007'){
 				fields.innerHTML='';
 				create_marksinput('ga','Average Graded Assignment');
 				create_marksinput('qz1','Quiz 1');
@@ -128,8 +128,8 @@ const create_marksinput =(value, tContent)=>{
 			else if(secondDropdown.value === 'se2001'){
 				fields.innerHTML='';
 				create_marksinput('ga1','Average Graded Assignment 1');
-				create_marksinput('ga2','Average Graded Assignment 2');
-				create_marksinput('ga3','Average Graded Assignment 3');
+				create_marksinput('ga2','Score in NPPE1');
+				create_marksinput('ga3','Score in NPPE2');
 				create_marksinput('qz1','Quiz 1');
 				create_marksinput('qz2','Quiz 2');
 				create_marksinput('pe1','OPPE 1');
@@ -145,7 +145,7 @@ const create_marksinput =(value, tContent)=>{
 				create_marksinput('qz2','Quiz 2');
 				calc.classList.remove('hidden');
 			}
-
+			
 			
 			else if(secondDropdown.value === 'se2002'){
 				fields.innerHTML='';
@@ -155,7 +155,14 @@ const create_marksinput =(value, tContent)=>{
 				create_marksinput('pe2','OPPE 2');
 				calc.classList.remove('hidden');
 			}
-			
+			else if(secondDropdown.value === 'cs2003'){
+				fields.innerHTML='';
+				create_marksinput('ga','Average Graded Assignment');
+				create_marksinput('gla','Average Lab Assignment');
+				create_marksinput('qz1','Quiz 1');
+				create_marksinput('qz2','Quiz 2');
+				calc.classList.remove('hidden');
+			}
 			
 			else {
 				fields.innerHTML='';
