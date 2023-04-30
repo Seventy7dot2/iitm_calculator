@@ -55,6 +55,7 @@
   
   #result {
     margin-top: 20px;
+    overflow-x:auto;
     display: none;
   }
   table {
